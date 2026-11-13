@@ -18,6 +18,7 @@ h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:400;letter-spacing:-.0
 a{color:inherit}
 .w{max-width:1120px;margin:0 auto;padding:0 22px}
 /* intestazione */
+section[id]{scroll-margin-top:76px}
 header{position:sticky;top:0;z-index:20;background:rgba(247,242,235,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 header .w{display:flex;align-items:center;gap:20px;height:68px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:500 1.35rem "Fraunces",serif}
@@ -226,6 +227,16 @@ footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
 <script>
 document.getElementById('anno').textContent = new Date().getFullYear();
+/* la pagina si apre sempre dall'inizio: niente ritorno alla posizione precedente né salto a #contatti rimasto nell'indirizzo */
+try { history.scrollRestoration = 'manual'; } catch (e) {}
+if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+addEventListener('load', () => scrollTo(0, 0));
+addEventListener('pageshow', e => { if (e.persisted) scrollTo(0, 0); });
+/* i link del menu scorrono alla sezione senza aggiungere #… all'indirizzo */
+document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+  const id = a.getAttribute('href').slice(1), el = id ? document.getElementById(id) : null;
+  e.preventDefault(); if (el) el.scrollIntoView({ behavior: 'smooth' }); else scrollTo({ top: 0, behavior: 'smooth' });
+}));
 /* il modulo apre una email già compilata: nessun dato viene salvato sul sito */
 const CONTATTO = 'eurogestionsas2009@libero.it';
 document.getElementById('modulo').addEventListener('submit', e => {
