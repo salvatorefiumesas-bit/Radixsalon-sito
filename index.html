@@ -207,7 +207,7 @@ footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
 <section id="contatti" class="scura"><div class="w contatti">
  <div class="tit" style="margin:0"><h2>Vediamo insieme la tua app.</h2><p>Lasciaci i tuoi dati: ti mostriamo una demo con il nome del tuo salone e rispondiamo a ogni domanda, senza impegno.</p>
-  <p class="mute" style="margin-top:22px">Oppure scrivici direttamente:<br><a href="mailto:info@radixsalon.it">info@radixsalon.it</a></p></div>
+  <p class="mute" style="margin-top:22px">Oppure scrivici direttamente:<br><a href="mailto:eurogestiosas2009@libero.it">eurogestiosas2009@libero.it</a></p></div>
  <form id="modulo">
   <div class="due"><label>Nome e cognome<input name="nome" required autocomplete="name"></label><label>Nome del salone<input name="salone" required></label></div>
   <div class="due"><label>Telefono<input name="tel" type="tel" required autocomplete="tel"></label><label>Città<input name="citta"></label></div>
@@ -221,13 +221,13 @@ footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
 <footer><div class="w">
  <span>© <span id="anno"></span> Radix Salon – un servizio di Eurogestion S.A.S. di Di Fiore Rosa · P.IVA [da inserire]</span>
- <span><a href="#faq">Domande</a> · <a href="mailto:info@radixsalon.it">Contatti</a></span>
+ <span><a href="#faq">Domande</a> · <a href="mailto:eurogestiosas2009@libero.it">Contatti</a></span>
 </div></footer>
 
 <script>
 document.getElementById('anno').textContent = new Date().getFullYear();
 /* il modulo apre una email già compilata: nessun dato viene salvato sul sito */
-const CONTATTO = 'info@radixsalon.it';
+const CONTATTO = 'eurogestiosas2009@libero.it';
 document.getElementById('modulo').addEventListener('submit', e => {
   e.preventDefault();
   const f = new FormData(e.target), r = k => (f.get(k) || '').toString().trim();
