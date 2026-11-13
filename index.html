@@ -184,7 +184,7 @@ footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
  <div class="tit"><h2>Un prezzo solo, tutto incluso.</h2><p>Nessun costo di attivazione e nessuna commissione sulle prenotazioni. Scegli tu come pagare.</p></div>
  <div class="card prezzo top" style="max-width:860px">
   <h3>Radix Salon – piano completo</h3>
-  <p class="cifra">500 € <small>/ anno</small></p>
+  <p class="cifra">500 € <small>/ anno, IVA inclusa</small></p>
   <div class="rate">
    <div><b>41,67 €</b><span>al mese<br>12 rate mensili</span></div>
    <div><b>250 €</b><span>a semestre<br>2 rate semestrali</span></div>
@@ -192,7 +192,7 @@ footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   <ul class="due-col"><li>App con il nome e il logo del tuo salone</li><li>Gestionale per te e lo staff</li><li>Prenotazioni e clienti illimitati</li><li>Fidelity Card a punti e galleria</li><li>Promemoria, avvisi e comunicazioni</li><li>Importazione dei clienti dal vecchio gestionale</li><li>QR code e materiale per i clienti</li><li>Aggiornamenti e assistenza inclusi</li></ul>
   <a class="bt" href="#contatti">Richiedi una demo gratuita</a>
  </div>
- <p class="nota">Gli account sviluppatore degli store (Google Play e App Store), se l’app viene pubblicata a nome del salone, sono a parte. Preventivi personalizzati per saloni con più sedi.</p>
+ <p class="nota">Tutti i prezzi sono IVA inclusa. Gli account sviluppatore degli store (Google Play e App Store), se l’app viene pubblicata a nome del salone, sono a parte. Preventivi personalizzati per saloni con più sedi.</p>
 </div></section>
 
 <section id="faq" style="padding-top:20px"><div class="w">
@@ -207,7 +207,7 @@ footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
 <section id="contatti" class="scura"><div class="w contatti">
  <div class="tit" style="margin:0"><h2>Vediamo insieme la tua app.</h2><p>Lasciaci i tuoi dati: ti mostriamo una demo con il nome del tuo salone e rispondiamo a ogni domanda, senza impegno.</p>
-  <p class="mute" style="margin-top:22px">Oppure scrivici direttamente:<br><a href="mailto:eurogestiosas2009@libero.it">eurogestiosas2009@libero.it</a></p></div>
+  <p class="mute" style="margin-top:22px">Oppure scrivici direttamente:<br><a href="mailto:eurogestionsas2009@libero.it">eurogestionsas2009@libero.it</a></p></div>
  <form id="modulo">
   <div class="due"><label>Nome e cognome<input name="nome" required autocomplete="name"></label><label>Nome del salone<input name="salone" required></label></div>
   <div class="due"><label>Telefono<input name="tel" type="tel" required autocomplete="tel"></label><label>Città<input name="citta"></label></div>
@@ -220,14 +220,14 @@ footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 </main>
 
 <footer><div class="w">
- <span>© <span id="anno"></span> Radix Salon – un servizio di Eurogestion S.A.S. di Di Fiore Rosa · P.IVA [da inserire]</span>
- <span><a href="#faq">Domande</a> · <a href="mailto:eurogestiosas2009@libero.it">Contatti</a></span>
+ <span>© <span id="anno"></span> Radix Salon – un servizio di Eurogestion S.A.S. di Di Fiore Rosa · P.IVA 05812141215</span>
+ <span><a href="#faq">Domande</a> · <a href="mailto:eurogestionsas2009@libero.it">Contatti</a></span>
 </div></footer>
 
 <script>
 document.getElementById('anno').textContent = new Date().getFullYear();
 /* il modulo apre una email già compilata: nessun dato viene salvato sul sito */
-const CONTATTO = 'eurogestiosas2009@libero.it';
+const CONTATTO = 'eurogestionsas2009@libero.it';
 document.getElementById('modulo').addEventListener('submit', e => {
   e.preventDefault();
   const f = new FormData(e.target), r = k => (f.get(k) || '').toString().trim();
