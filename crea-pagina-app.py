@@ -28,8 +28,8 @@ os.makedirs(dest, exist_ok=True)
 esc = lambda t: t.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
 BOX = ('<div style="border:1.5px solid var(--line);background:var(--surf);border-radius:16px;padding:12px 14px;margin:0 0 16px;font-size:.92rem">'
        'App <b>%s</b>, sviluppata e pubblicata da <b>Eurogestion S.A.S. di Di Fiore Rosa</b> (P.IVA 05812141215, Via Argine 572, 80147 Napoli) '
-       'nell\'ambito del servizio <a href="https://eurogestionradix.it">Radix Salon</a>. Il titolare del trattamento dei dati degli utenti è l\'esercente '
-       'indicato nell\'informativa; Eurogestion è responsabile del trattamento. Contatti: <a href="mailto:info@eurogestionradix.it">info@eurogestionradix.it</a>.</div>\n ') % esc(nome)
+       'nell\'ambito del servizio <a href="https://eurogestionradix.it">Radix Salon</a>. Eurogestion è il titolare del trattamento dei dati degli utenti; i dati di prenotazione sono comunicati '
+       'all\'attività presso cui si prenota. Contatti: <a href="mailto:info@eurogestionradix.it">info@eurogestionradix.it</a>.</div>\n ') % esc(nome)
 FOOTER = ('<footer>Questa pagina mostra i testi aggiornati che il titolare dell\'app pubblica nel gestionale. App sviluppata e pubblicata da '
           'Eurogestion S.A.S. di Di Fiore Rosa – servizio Radix Salon · <a href="https://eurogestionradix.it">eurogestionradix.it</a></footer>')
 
