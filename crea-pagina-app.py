@@ -40,6 +40,16 @@ def una(s, vecchio, nuovo, nomefile):
 
 for pagina in ['privacy.html', 'termini.html', 'cancella-account.html']:
     h = open(os.path.join(sorgente, pagina), encoding='utf-8').read()
+    # intestazione: marchio di Eurogestion (Radix Salon), non quello del salone
+    h = re.sub(r'<header>.*?</header>',
+               lambda m: '<header><img id="lg" src="/favicon-192.png" alt="" style="border-radius:12px"><div><b id="nome">Radix Salon</b><span id="sotto">Eurogestion S.A.S.</span></div></header>',
+               h, count=1, flags=re.S)
+    h, n = re.subn(r"document\.getElementById\('nome'\)\.textContent = [^;]*;\s*document\.getElementById\('sotto'\)\.textContent = [^;]*;\s*if \(C\.logo\) document\.getElementById\('lg'\)\.src = C\.logo;", "", h)
+    if n != 1:
+        sys.exit('%s: non trovo le righe del nome/logo: la pagina dell\'app è cambiata, aggiornare questo script' % pagina)
+    h, n = re.subn(r"document\.title = \(C\.nome \|\| [^)]*\) \+ ' – ' \+ tit;", "document.title = tit + ' – ' + (C.nome || '') + ' (Radix Salon)';", h)
+    if n != 1:
+        sys.exit('%s: non trovo il titolo della pagina: aggiornare questo script' % pagina)
     h = una(h, '<main>', BOX + '<main>', pagina)
     h = re.sub(r'<footer>.*?</footer>', lambda m: FOOTER, h, count=1, flags=re.S)
     h = una(h, '<meta name="robots" content="index">',
